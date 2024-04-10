@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  job-name:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/my-action
+        with:
+          key: key-val
+          path: path-val
+          registry: ${{ secrets.mysecret }}
