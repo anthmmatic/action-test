@@ -1,0 +1,18 @@
+name: 'Use Inputs'
+inputs:
+  key:
+    description: 'desc value'
+    required: true
+  path:
+    description: 'path value'
+    required: true
+  registry:
+    description: 'registry value.'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Echo vals
+      shell: bash
+      run: echo "${{ inputs.registry }} ${{ inputs.path }} ${{ inputs.key }}"
